@@ -1,0 +1,15 @@
+Rt2aiv Plugin Description: 
+export TEXTURERENDERTARGET2D to AVI file.
+The size of the screen is determined by the size of the texturerendertarget2d.
+
+Note: Only one video stream is written at the same time.
+
+blue print function(in group Rt2target):
+1,start capture video:
+require the incoming TEXTURERENDERTARGET2D parameter to return the AVI. 
+
+2,capture frame:
+Every time call "capture frame", a frame is written to AVI.  pls refresh the target content before call this function.
+
+3,end capture:
+Call "end capture" to stop capture, start write to files. If you do not call "end capture" and  call the socend "start capture video" directly, it will finish the previous one, save it, and then go to the new file calling.
